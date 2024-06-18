@@ -1,0 +1,33 @@
+{
+  "name": "cpm-ca_v2",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "https://us-central1-cpm-ca.cloudfunctions.net/cpmca",
+  "keywords": [
+    "cpm, psy"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "check-exports": "node checkExports.js"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.19.3",
+    "axios": "^1.7.2",
+    "next": "14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-facebook-pixel": "^1.0.4",
+    "react-player": "^2.16.0",
+    "react-slick": "^0.30.2",
+    "sass": "^1.77.2",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.3"
+  }
+}
