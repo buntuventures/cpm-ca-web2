@@ -6,7 +6,7 @@ import Select from "./Select";
 import Button from "../Button/Button";
 import ToolTip from "../ToolTip/ToolTip";
 import Image from "next/image";
-import CheckIcon from "/images/check_circle_outline-24px.svg";
+import CheckCircle from "/images/check_circle_outline-24px.svg";
 import classes from "./Forms.module.css";
 import Link from "next/link";
 
@@ -741,7 +741,7 @@ const ThankYou = () => (
           width: "100%",
         }}
       >
-        <Image src={CheckIcon} alt="Icon Success" width={40} height={40} />
+        <Image src={CheckCircle} alt="Icon Success" width={40} height={40} />
       </div>
     </div>
     <p>
