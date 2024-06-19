@@ -42,11 +42,14 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+        {/* Autres balises meta et liens nécessaires */}
       </Head>
-        <Script
-          id="pixel"
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Script
+        id="pixel"
+        dangerouslySetInnerHTML={{
+          __html: `
               !function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
               n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -58,14 +61,14 @@ const App = ({ Component, pageProps }) => {
               fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
               fbq('track', 'PageView');
             `,
-          }}
-        />
-        {/* <noscript>
+        }}
+      />
+      {/* <noscript>
           <img height="1" width="1" style={{ display: 'none' }}
             src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
           />
         </noscript> */}
-      
+
       <Layout>
         <Component {...pageProps} />
       </Layout>

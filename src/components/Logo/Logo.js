@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,6 +14,7 @@ const Logo = () => (
         alt="CPM Logo"
         width={400}
         height={100}
+        layout="responsive"
       />
     </Link>
   </div>
