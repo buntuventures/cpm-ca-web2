@@ -1,7 +1,7 @@
 "use client";
 
 import React, { Component } from "react";
-import ExtendedForm from "@ExtendedForm/componentsEn/Forms/ExtendedForm";
+import ExtendedForm from "@ExtendedFormEn/ExtendedForm";
 import Head from "next/head";
 
 export default class Booking extends Component {

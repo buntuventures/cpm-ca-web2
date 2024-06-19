@@ -6,7 +6,7 @@ import Image from "next/image";
 const Select = ({ styles, children, changed, name, value }) => (
   <select
     className={classes.SelectInput}
-    style={{ backgroundImage: `url("/images/arrow_down-24px.svg")` }}
+    style={{ backgroundImage: `url("/images/arrow_down-24px.svg")`, ...styles }}
     name={name}
     value={value}
     onChange={changed}

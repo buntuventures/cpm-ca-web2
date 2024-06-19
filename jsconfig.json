@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@ExtendedForm/*": ["./src/components/Forms/*"],
+      "@ExtendedFormEn/*": ["./src/componentsEn/Forms/*"]
     }
   }
 }
