@@ -5,6 +5,7 @@ import Head from "next/head";
 import { useRouter } from "next/router"; // Utilisez next/router
 import Header from "@/components/Header/Header";
 import HeaderEnglish from "@/componentsEn/Header/HeaderEnglish";
+import Script from "next/script";
 
 const Layout = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -68,7 +69,29 @@ const Layout = ({ children }) => {
           />
         )}
       </header>
-      <main>{children}</main>
+      <main>
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=UA-121097236-1`}
+        />
+        <Script
+          id="gtag-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-121097236-1');
+            gtag('config', 'AW-997202270');
+            gtag('config', 'AW-997202270/qnv-CIfCnoQBEN6ywNsD', {
+              'phone_conversion_number': '613-252-5227'
+            });
+          `,
+          }}
+        />
+        {children}
+      </main>
     </>
   );
 };

@@ -36,6 +36,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
     <Head>
+      
         <script
           dangerouslySetInnerHTML={{
             __html: `
