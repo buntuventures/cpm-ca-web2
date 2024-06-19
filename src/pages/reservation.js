@@ -2,7 +2,7 @@
 "use client";
 
 import React from "react";
-import ExtendedForm from "../components/Forms/ExtendedForm";
+import ExtendedForm from "@ExtendedForm/ExtendedForm";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
