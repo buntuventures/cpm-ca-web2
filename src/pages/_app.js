@@ -5,11 +5,10 @@ import Layout from "@/app/layout";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/globals.css";
-import useLanguageRedirect from '../../hooks/useLanguageRedirect';
+// import useLanguageRedirect from '../../hooks/useLanguageRedirect';
 
 const App = ({ Component, pageProps }) => {
 
-  useLanguageRedirect();
 
   useEffect(() => {
     const facebookPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;

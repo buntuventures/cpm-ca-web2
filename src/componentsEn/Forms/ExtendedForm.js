@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
+
 import recordMobileCall from "../../utils/google_conversion_mobile_call";
 import Input from "./Input";
 import Select from "./Select";
 import Button from "../Button/Button";
 import ToolTip from "../ToolTip/ToolTip";
-import Image from "next/image";
-// import CheckCircle from "../public/images/check_circle_outline-24px.svg";
+
+// import CheckIcon from "../../images/check_circle_outline-24px.svg";
+
 import classes from "./Forms.module.css";
-import Link from "next/link";
+import Image from "next/image";
 
 function gtag_report_conversion(url) {
   var callback = function () {
@@ -21,7 +23,9 @@ function gtag_report_conversion(url) {
   return false;
 }
 
-class ExtendedForm extends Component {
+export default class ExtendedForm extends Component {
+  static displayName='ExtendedForm';
+
   state = {
     step: 1,
     isLoading: false,
@@ -55,6 +59,7 @@ class ExtendedForm extends Component {
         countryError: false,
         dateOfBirthError: false,
       },
+      // step 3
       stepTwo: {
         termsAcceptedError: false,
         cancellationPolicyError: false,
@@ -126,11 +131,13 @@ class ExtendedForm extends Component {
                 },
               });
             } else {
+              // url = https://cpm.tophealth.ca/leads/new-lead
               let prefix = "Mr.";
               if (this.state.formData.gender === "Feminin") {
                 prefix = "Mrs";
               }
 
+              // const API_ENDPOINT = `https://app.sendsync.net/leads/new-lead`
               const API_ENDPOINT = `https://us-central1-cpm-ca.cloudfunctions.net/cpmca/new-lead`;
 
               axios
@@ -213,7 +220,6 @@ class ExtendedForm extends Component {
       return obj;
     }
   };
-
   checkErrors = (obj) => {
     const errors = Object.keys(obj).filter((item) => obj[item] === true);
 
@@ -393,7 +399,7 @@ const StepOne = (props) => {
         This form is only for persons residing in Canada. You can request an
         appointment online by completing the following form or by calling{" "}
         <span onClick={() => recordMobileCall()}>
-          <Link href="tel:+16132525227">613-252-5227</Link>
+          <a href="tel:+16132525227">613-252-5227</a>
         </span>
         .
       </p>
@@ -695,14 +701,14 @@ const ReviewStep = (props) => {
           <input type="checkbox" name="termsAccepted" onChange={changed} />
           <span style={{ paddingLeft: 6 }}>
             I accept the{" "}
-            <Link
+            <a
               style={{ textDecoration: "underline" }}
               href="/en/privacy-policy"
               target="_blank"
             >
               conditions relating to the transmission and confidentiality of
               data and the rules of use
-            </Link>{" "}
+            </a>{" "}
             related to the appointment request.
           </span>
         </div>
@@ -741,7 +747,11 @@ const ThankYou = () => (
           width: "100%",
         }}
       >
-        <Image src="/images/check_circle_outline-24px.svg" alt="Icon Success" width={40} height={40} />
+        <Image
+          src="/images/check_circle_outline-24px.svg"
+          alt="Icon Success"
+          style={{ width: 40, height: 40 }}
+        />
       </div>
     </div>
     <p>
@@ -764,13 +774,13 @@ const ThankYou = () => (
     </p>
     <p>
       If you have any questions do not hesitate to contact us at{" "}
-      <Link
+      <a
         href="tel:+16132525227"
         style={{ textDecoration: "underline", fontWeight: "bold" }}
         onClick={() => recordMobileCall()}
       >
         613-252-5227
-      </Link>{" "}
+      </a>{" "}
       from Monday to Friday from 9AM to 12PM and 1PM to 5PM.
     </p>
     <p>
@@ -778,5 +788,3 @@ const ThankYou = () => (
     </p>
   </div>
 );
-
-export default ExtendedForm;
