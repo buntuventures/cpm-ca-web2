@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.facebook.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.facebook.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
   env: {
     PUBLIC_FACEBOOK_PIXEL_ID: process.env.PUBLIC_FACEBOOK_PIXEL_ID,

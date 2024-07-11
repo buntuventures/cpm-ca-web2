@@ -32,33 +32,7 @@ const HeroSection = (props) => (
             height="100%"
           />
         </div>
-        <div
-          style={{ fontSize: "0.8rem", padding: "10px 0 0" }}
-          className={MozaiqueStyles.VideoFooterText}
-        >
-          <div
-            style={{
-              fontSize: "0.9rem",
-              backgroundColor: "#04040487",
-              padding: "0 10px",
-              fontWeight: 500,
-              display: "inline-block",
-            }}
-          >
-            Nos consultations peuvent être partiellement remboursées par
-            certaines assurances.
-          </div>
-          <div
-            style={{
-              backgroundColor: "#04040487",
-              padding: "0 10px",
-              display: "inline-block",
-            }}
-          >
-            Les places sont limitées dues à la forte demande des services de
-            consultation.
-          </div>
-        </div>
+        <VideoFooterText />
       </div>
       <div
         style={{ padding: 10, position: props.position, top: props.top }}
@@ -71,12 +45,42 @@ const HeroSection = (props) => (
   </Mozaique>
 );
 
+const VideoFooterText = () => (
+  <div
+    style={{ fontSize: "0.8rem", padding: "10px 0 0" }}
+    className={MozaiqueStyles.VideoFooterText}
+  >
+    <div
+      style={{
+        fontSize: "0.9rem",
+        backgroundColor: "#04040487",
+        padding: "0 10px",
+        fontWeight: 500,
+        display: "inline-block",
+      }}
+    >
+      Nos consultations peuvent être partiellement remboursées par certaines
+      assurances.
+    </div>
+    <div
+      style={{
+        backgroundColor: "#04040487",
+        padding: "0 10px",
+        display: "inline-block",
+      }}
+    >
+      Les places sont limitées dues à la forte demande des services de
+      consultation.
+    </div>
+  </div>
+);
+
 const MobileHeroCallToAction = (props) => (
   <div
     style={{ textAlign: "center", padding: 20 }}
     className={MozaiqueStyles.MobileCallToAction}
   >
-    <Link href="/reservation" passHref>
+    <Link href="/reservation">
       <Button
         color="primary"
         text="Réservez une Consultation en Ligne"
@@ -91,23 +95,7 @@ const MobileHeroCallToAction = (props) => (
         <Button color="secondary" text="613-252-5227" styles={buttonStyles} />
       </Link>
     </div>
-    <div style={{ fontSize: "0.7rem", padding: "10px 0 0", color: "#fff" }}>
-      <div
-        style={{
-          fontSize: "0.9rem",
-          backgroundColor: "#04040487",
-          padding: "4px 10px 0",
-          fontWeight: 500,
-        }}
-      >
-        Nos consultations peuvent être partiellement remboursées par certaines
-        assurances.
-      </div>
-      <div style={{ backgroundColor: "#04040487", padding: "0 10px 4px" }}>
-        Les places sont limitées dues à la forte demande des services de
-        consultation.
-      </div>
-    </div>
+    <VideoFooterText />
   </div>
 );
 

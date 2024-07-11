@@ -1,8 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Button from "../Button/Button";
 import classes from "./Forms.module.css";
-// import ArrowDown from "/images/arrow_down-24px.svg";
 import Input from "@/componentsEn/Forms/Input";
 import Select from "@/componentsEn/Forms/Select";
 
@@ -18,17 +19,16 @@ const LeadForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
   const handleLeadFormClicked = () => {
-    router.push({
-      pathname: "/reservation",
-      query: { data: JSON.stringify(formData) },
-    });
+    router.push(
+      `/reservation?data=${encodeURIComponent(JSON.stringify(formData))}`
+    );
   };
 
   return (

@@ -13,7 +13,7 @@ const MyMapComponent = ({ isMarkerShown }) => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyD9FmZ3GN480MftgTI8AGfCaLtRLTh9YfI">
+    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={center}

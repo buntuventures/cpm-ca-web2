@@ -1,15 +1,13 @@
 import React from "react";
-
 import classes from "./Navigation.module.css";
-
 import CallToAction from "../CallToAction";
 import NavLinks from "./NavLinks";
 
-const Navigation = () => (
-  <div className={classes.NavWrap}>
-    <NavLinks />
+const Navigation = ({ isMobile }) => (
+  <nav className={classes.NavWrap} aria-label="Navigation principale">
+    <NavLinks isMobile={isMobile} />
     <CallToAction />
-  </div>
+  </nav>
 );
 
 export default Navigation;

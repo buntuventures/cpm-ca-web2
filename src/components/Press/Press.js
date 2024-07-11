@@ -12,25 +12,28 @@ import AThree from "/images/Canadian_Psychological_Association_Logo.jpg";
 import AFour from "/images/CPA-Bilingual.png";
 import AFive from "/images/world-psy-association.png";
 
+
 const Press = () => (
   <div className={classes.Wrapper}>
     <div style={{ maxWidth: 1170, padding: 15, margin: "auto" }}>
       <div>PARU DANS</div>
       <div className={classes.Logos}>
-        <div className={classes.LogoWrapper}>
-          <Image className={classes.Logo} width={24} height={24} src={LeMonde} alt="Le Monde Logo" />
-        </div>
-        <div className={classes.LogoWrapper}>
-          <Image className={classes.Logo} width={24} height={24} src={ArcInfo} alt="Arc Info Logo" />
-        </div>
-        <div className={classes.LogoWrapper}>
-          <Image
-            className={classes.Logo}
-            src={CanalAlpha}
-            width={24} height={24}
-            alt="Canal Alpha Logo"
-          />
-        </div>
+        {[
+          { src: LeMonde, alt: "Le Monde Logo" },
+          { src: ArcInfo, alt: "Arc Info Logo" },
+          { src: CanalAlpha, alt: "Canal Alpha Logo" },
+        ].map((logo, index) => (
+          <div key={index} className={classes.LogoWrapper}>
+            <Image 
+              className={classes.Logo} 
+              src={logo.src} 
+              alt={logo.alt}
+              width={100}
+              height={50}
+              layout="responsive"
+            />
+          </div>
+        ))}
       </div>
     </div>
   </div>

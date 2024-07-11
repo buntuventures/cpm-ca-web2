@@ -1,15 +1,20 @@
 import React from 'react';
 import classes from './Hamburger.module.css';
 
-const Hamburger = (props) => {
-  let activeClass = [classes.HamburgerContainer];
-  if (props.active) {
-    activeClass = [classes.HamburgerContainer, classes.Active].join(' ');
-  }
+const Hamburger = ({ active, clicked }) => {
+  const activeClass = active 
+    ? `${classes.HamburgerContainer} ${classes.Active}`
+    : classes.HamburgerContainer;
+
   return (
-    <div className={activeClass} onClick={props.clicked}>
+    <button 
+      className={activeClass} 
+      onClick={clicked}
+      aria-label={active ? "Fermer le menu" : "Ouvrir le menu"}
+      aria-expanded={active}
+    >
       <div className={classes.Hamburger} />
-    </div>
+    </button>
   );
 };
 

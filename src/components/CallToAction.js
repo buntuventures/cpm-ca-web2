@@ -1,25 +1,30 @@
+"use client";
+
 import React from "react";
 import PropTypes from "prop-types";
+import { useRouter } from "next/navigation";
 import Button from "./Button/Button";
-import { useRouter } from "next/router";
 
 const CallToAction = ({ type }) => {
   const router = useRouter();
 
+  const handleReservationClick = () => {
+    router.push("/reservation?item=navigation");
+  };
+
   if (type === "call") {
-    return <button>Appelez pour Réserver</button>;
+    return (
+      <button onClick={() => (window.location.href = "tel:+16132525227")}>
+        Appelez pour Réserver
+      </button>
+    );
   }
 
   return (
     <Button
       color="primary"
       text="Réserver en ligne"
-      clicked={() =>
-        router.push({
-          pathname: "/reservation",
-          query: { item: "navigation" },
-        })
-      }
+      clicked={handleReservationClick}
     />
   );
 };
