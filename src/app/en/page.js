@@ -18,7 +18,7 @@ import HowToGetStarted from "@/componentsEn/Contents/Home/HowToGetStarted";
 import Benefits from "@/componentsEn/Contents/Home/Benefits";
 import GetStarted from "@/componentsEn/Contents/Home/GetStarted";
 import HomePage from "@/componentsEn/Contents/Home/HomePage";
-import { useRouter } from "next/router";
+
 
 // Dynamic imports for components that might cause hydration issues
 const DynamicHeroSection = dynamic(

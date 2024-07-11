@@ -1,3 +1,6 @@
+"use client";
+
+
 import React from "react";
 import { useRouter } from "next/router";
 import Iframe from "../../Iframe/Iframe";

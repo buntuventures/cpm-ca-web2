@@ -1,3 +1,5 @@
+"use client";
+
 // src/hooks/useLanguageRedirect.js
 import { useEffect } from "react";
 import { useRouter } from "next/router";

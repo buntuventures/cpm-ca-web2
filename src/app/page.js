@@ -18,7 +18,6 @@ import WhyUs, {
 import HowToGetStarted from "@/components/Contents/Home/HowToGetStarted";
 import Benefits from "@/components/Contents/Home/Benefits";
 import GetStarted from "@/components/Contents/Home/GetStarted";
-import { useRouter } from "next/router";
 // import MobileActions from "@/components/MobileActions/MobileActions";
 
 // Charger dynamiquement les composants qui peuvent causer des problèmes d'hydratation
