@@ -10,11 +10,17 @@ const nextConfig = {
     ],
   },
   env: {
-    PUBLIC_FACEBOOK_PIXEL_ID: process.env.PUBLIC_FACEBOOK_PIXEL_ID,
-    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    NEXT_PUBLIC_FACEBOOK_PIXEL_ID: process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID,
+    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY:
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+  },
+  publicRuntimeConfig: {
+    NEXT_PUBLIC_FACEBOOK_PIXEL_ID: process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID,
+    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY:
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   },
   reactStrictMode: false,
-  pageExtensions: ["js", "jsx"], // Ensure Next.js looks for pages with these extensions
+  pageExtensions: ["js", "jsx"],
 };
 
 export default nextConfig;
