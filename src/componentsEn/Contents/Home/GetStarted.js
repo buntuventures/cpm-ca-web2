@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Button from "../../Button/Button";
 import Link from "next/link";
 
-const GetStarted = ({ clicked }) => {
+const GetStarted = () => {
   const router = useRouter();
 
   return (

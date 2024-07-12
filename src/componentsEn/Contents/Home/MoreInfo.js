@@ -1,15 +1,12 @@
 "use client";
 
-
 import React from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Iframe from "../../Iframe/Iframe";
 import Button from "../../Button/Button";
 import recordMobileCall from "../../../utils/google_conversion_mobile_call";
-import Image from "next/image";
-import classes from "../Content.module.css";
-// import Orloge from "/images/icon-orloge.png";
 import Link from "next/link";
+import classes from "../Content.module.css";
 
 const MoreInfo = ({ isMobile }) => {
   const router = useRouter();
@@ -75,7 +72,7 @@ const MoreInfo = ({ isMobile }) => {
             <div className={classes.MoreInfoItemBody} style={{ padding: 20 }}>
               <p className={classes.Horaire}>
                 Monday to Friday: <br />
-                <strong>9AM to 12PM</strong> et <strong>1PM ro 5PM</strong>{" "}
+                <strong>9AM to 12PM</strong> and <strong>1PM to 5PM</strong>{" "}
                 <br />
                 Closed on weekends
               </p>

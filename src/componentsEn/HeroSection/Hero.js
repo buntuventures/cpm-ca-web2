@@ -1,8 +1,9 @@
-"use client";
-
+javascript;
+Copy;
+("use client");
 
 import React from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import ReactPlayer from "react-player";
 import Button from "../Button/Button";
 import LeadForm from "../Forms/LeadForm";
@@ -43,32 +44,7 @@ const HeroSection = (props) => {
             />
           </div>
 
-          <div
-            style={{ fontSize: "0.8rem", padding: "10px 0 0" }}
-            className={MozaiqueStyles.VideoFooterText}
-          >
-            <div
-              style={{
-                fontSize: "0.9rem",
-                backgroundColor: "#04040487",
-                padding: "0 10px",
-                fontWeight: 500,
-                display: "inline-block",
-              }}
-            >
-              Our consultations are partially reimbursable by certain
-              insurances.
-            </div>
-            <div
-              style={{
-                backgroundColor: "#04040487",
-                padding: "0 10px",
-                display: "inline-block",
-              }}
-            >
-              Spots are limited due to the high demand for counselling services.
-            </div>
-          </div>
+          <VideoFooterText />
         </div>
 
         <div
@@ -83,14 +59,36 @@ const HeroSection = (props) => {
   );
 };
 
-HeroSection.displayName = "HeroSection";
+const VideoFooterText = () => (
+  <div
+    style={{ fontSize: "0.8rem", padding: "10px 0 0" }}
+    className={MozaiqueStyles.VideoFooterText}
+  >
+    <div
+      style={{
+        fontSize: "0.9rem",
+        backgroundColor: "#04040487",
+        padding: "0 10px",
+        fontWeight: 500,
+        display: "inline-block",
+      }}
+    >
+      Our consultations are partially reimbursable by certain insurances.
+    </div>
+    <div
+      style={{
+        backgroundColor: "#04040487",
+        padding: "0 10px",
+        display: "inline-block",
+      }}
+    >
+      Spots are limited due to the high demand for counselling services.
+    </div>
+  </div>
+);
 
 const MobileHeroCallToAction = (props) => {
   const router = useRouter();
-
-  const navigateTo = (path) => {
-    router.push(path);
-  };
 
   return (
     <div
@@ -99,53 +97,22 @@ const MobileHeroCallToAction = (props) => {
     >
       <Button
         color="primary"
-        text="Réservez une Consultation en Ligne"
-        clicked={() => navigateTo("/reservation")}
+        text="Book an Online Consultation"
+        clicked={() => router.push("/reservation")}
         styles={buttonStyles}
       />
       <div style={{ padding: 10 }}>
         <h4 style={{ color: "#fff", marginBottom: 10, fontSize: "0.9rem" }}>
-          Ou appelez nous maintenant
+          Or call us now
         </h4>
-        <Link
-          href="tel:+16132525227"
-          onClick={() => {
-            countMobileCallConversion();
-          }}
-        >
-          <Button
-            color="secondary"
-            text="613-252-5227"
-            styles={buttonStyles}
-            clicked={() => countMobileCallConversion()}
-          />
+        <Link href="tel:+16132525227" onClick={countMobileCallConversion}>
+          <Button color="secondary" text="613-252-5227" styles={buttonStyles} />
         </Link>
       </div>
-      <div style={{ fontSize: "0.7rem", padding: "10px 0 0", color: "#fff" }}>
-        <div
-          style={{
-            fontSize: "0.9rem",
-            backgroundColor: "#04040487",
-            padding: "4px 10px 0",
-            fontWeight: 500,
-          }}
-        >
-          Our consultations are partially reimbursable by certain insurances.
-        </div>
-        <div
-          style={{
-            backgroundColor: "#04040487",
-            padding: "0 10px 4px",
-          }}
-        >
-          Spots are limited due to the high demand for counselling services.
-        </div>
-      </div>
+      <VideoFooterText />
     </div>
   );
 };
-
-MobileHeroCallToAction.displayName = "MobileHeroCallToAction";
 
 const buttonStyles = {
   padding: 10,

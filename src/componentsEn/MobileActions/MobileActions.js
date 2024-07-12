@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import CallAction from "../Header/CallAction";
 import FillFormIcon from "../Header/FillFormAction";
@@ -12,5 +14,4 @@ const MobileActions = () => {
   );
 };
 
-MobileActions.displayName = "MobileActions";
 export default MobileActions;

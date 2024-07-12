@@ -1,7 +1,4 @@
 import React from "react";
-import Image from "next/image";
-// import ImageMobile from "/images/mozaique-mobile.png";
-// import ImageDesktop from "/images/mozaique.png";
 
 const Mozaique = ({ isMobile, windowWidth, children }) => (
   <div

@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import classes from "../Content.module.css";
-// import ArrowRight from "/images/arrow-right.svg";
 
 const Services = () => (
   <div style={{ backgroundColor: "#f6f6f6" }}>
@@ -31,56 +30,29 @@ const Services = () => (
           most complex. This includes:
         </p>
         <div className={classes.ServiceList}>
-          <ul>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Anxieties
-            </li>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Phobias and fears
-            </li>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Relationship difficulties
-            </li>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Depressions
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Family problems
-            </li>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Burnout
-            </li>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Professional difficulties
-            </li>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Identity concerns
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Traumas
-            </li>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Lack of self-esteem
-            </li>
-            <li>
-              <Image src="/images/arrow-right.svg" width={2} height={2} alt="Arrow Icon" />{" "}
-              Addictions
-            </li>
-          </ul>
+          {[
+            "Anxieties",
+            "Phobias and fears",
+            "Relationship difficulties",
+            "Depressions",
+            "Family problems",
+            "Burnout",
+            "Professional difficulties",
+            "Identity concerns",
+            "Traumas",
+            "Lack of self-esteem",
+            "Addictions",
+          ].map((item, index) => (
+            <div key={index}>
+              <Image
+                src="/images/arrow-right.svg"
+                width={12}
+                height={12}
+                alt="Arrow Icon"
+              />
+              <span style={{ marginLeft: "5px" }}>{item}</span>
+            </div>
+          ))}
         </div>
         <p>
           The above list is not exhaustive, and we will gladly do our best to

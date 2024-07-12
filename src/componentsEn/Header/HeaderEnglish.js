@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import CallToAction from "../CallToAction";
 import countMobileCallConversion from "../../utils/google_conversion_mobile_call";

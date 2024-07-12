@@ -2,7 +2,7 @@
 
 import React from "react";
 import Button from "../../Button/Button";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const Listen = () => {
   const router = useRouter();

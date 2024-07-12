@@ -1,6 +1,6 @@
 import React from "react";
 
-const WarningSection = ({ clicked }) => (
+const WarningSection = () => (
   <div style={{ backgroundColor: "#F6F6F6" }}>
     <div
       style={{

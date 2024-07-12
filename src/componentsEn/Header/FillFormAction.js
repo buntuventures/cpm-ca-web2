@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-// import CallIcon from "/images/fill-form-icon.svg";
 import Image from "next/image";
 
 const FillFormActions = () => (
@@ -20,7 +19,12 @@ const FillFormActions = () => (
     }}
   >
     <Link href="/reservation">
-      <Image alt="Reservation" src="/images/fill-form-icon.svg" width={34} height={24} style={{ width: 34, margin: 0 }} />
+      <Image
+        alt="Reservation"
+        src="/images/fill-form-icon.svg"
+        width={34}
+        height={34}
+      />
     </Link>
   </div>
 );

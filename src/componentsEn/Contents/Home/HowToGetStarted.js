@@ -15,51 +15,33 @@ const HowToGetStarted = () => (
     >
       <h2 style={{ marginBottom: 40 }}>How to get started?</h2>
       <div className={classes.GetStartedWrapper}>
-        <div
-          className={classes.GetStartedItem}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
-          <Number>1</Number>
-          <p>
-            How to get started?{" "}
-            <span onClick={() => recordMobileCall()}>
-              <Link href="tel:+16132525227">613-252-5227</Link>
-            </span>{" "}
-            (or <Link href="/en/booking">book online</Link>) and share your
-            problems with us.
-          </p>
-        </div>
-        <div
-          className={classes.GetStartedItem}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
-          <Number>2</Number>
-          <p>
-            We will provide you with therapists specifically adapted to your
-            needs.
-          </p>
-        </div>
-        <div
-          className={classes.GetStartedItem}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
-          <Number>3</Number>
-          <p>
-            Meet with your therapist and start the journey to improve yourself.
-          </p>
-        </div>
+        {[
+          {
+            number: 1,
+            text: <>Call us at <span onClick={() => recordMobileCall()}><Link href="tel:+16132525227">613-252-5227</Link></span> (or <Link href="/en/booking">book online</Link>) and share your problems with us.</>,
+          },
+          {
+            number: 2,
+            text: "We will provide you with therapists specifically adapted to your needs.",
+          },
+          {
+            number: 3,
+            text: "Meet with your therapist and start the journey to improve yourself.",
+          }
+        ].map((item, index) => (
+          <div
+            key={index}
+            className={classes.GetStartedItem}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            <Number>{item.number}</Number>
+            <p>{item.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   </div>
