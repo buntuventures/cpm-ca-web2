@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import Carousel from "@/componentsEn/Carousel/Carousel";
 import MoreInfoSection from "@/componentsEn/Contents/Home/MoreInfo";
@@ -15,6 +14,7 @@ import HowToGetStarted from "@/componentsEn/Contents/Home/HowToGetStarted";
 import Benefits from "@/componentsEn/Contents/Home/Benefits";
 import GetStarted from "@/componentsEn/Contents/Home/GetStarted";
 import HomePage from "@/componentsEn/Contents/Home/HomePage";
+import EnglishHomePageClient from "./EnglishHomePageClient";
 
 const DynamicHeroSection = dynamic(
   () => import("@/componentsEn/HeroSection/Hero"),
@@ -26,51 +26,26 @@ const DynamicMobileActions = dynamic(
 );
 
 export default function EnglishHomePage() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const updateDeviceState = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    const updateScrollPosition = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    updateDeviceState();
-    window.addEventListener("resize", updateDeviceState);
-    window.addEventListener("scroll", updateScrollPosition);
-
-    return () => {
-      window.removeEventListener("resize", updateDeviceState);
-      window.removeEventListener("scroll", updateScrollPosition);
-    };
-  }, []);
-
-  return (
-    <>
-      <DynamicHeroSection isMobile={isMobile} />
-      <Carousel />
-      <HomePage />
-      <Services />
-      <WhyUs />
-      <IndividualTherapy />
-      <CoupleTherapy />
-      <FamilyTherapy />
-      <PsychoEducation />
-      <HowToGetStarted />
-      <Benefits />
-      <GetStarted />
-      <MoreInfoSection isMobile={isMobile} />
-      <Footer />
-      {scrollPosition > 600 && <DynamicMobileActions />}
-    </>
-  );
+  return <EnglishHomePageClient 
+    DynamicHeroSection={DynamicHeroSection}
+    DynamicMobileActions={DynamicMobileActions}
+    Carousel={Carousel}
+    HomePage={HomePage}
+    Services={Services}
+    WhyUs={WhyUs}
+    IndividualTherapy={IndividualTherapy}
+    CoupleTherapy={CoupleTherapy}
+    FamilyTherapy={FamilyTherapy}
+    PsychoEducation={PsychoEducation}
+    HowToGetStarted={HowToGetStarted}
+    Benefits={Benefits}
+    GetStarted={GetStarted}
+    MoreInfoSection={MoreInfoSection}
+    Footer={Footer}
+  />;
 }
 
 export const metadata = {
   title: "Home - CPM CANADA",
-  description:
-    "Are you going through hard times? If so, you are not alone. Take the first step towards well-being by talking to a professional who will help you regain control and ...",
+  description: "Are you going through hard times? If so, you are not alone. Take the first step towards well-being by talking to a professional who will help you regain control and ...",
 };
