@@ -25,27 +25,35 @@ const DynamicMobileActions = dynamic(
   { ssr: false }
 );
 
+const DynamicCarousel = dynamic(
+  () => import("@/componentsEn/Carousel/Carousel"),
+  { ssr: false }
+);
+
 export default function EnglishHomePage() {
-  return <EnglishHomePageClient 
-    DynamicHeroSection={DynamicHeroSection}
-    DynamicMobileActions={DynamicMobileActions}
-    Carousel={Carousel}
-    HomePage={HomePage}
-    Services={Services}
-    WhyUs={WhyUs}
-    IndividualTherapy={IndividualTherapy}
-    CoupleTherapy={CoupleTherapy}
-    FamilyTherapy={FamilyTherapy}
-    PsychoEducation={PsychoEducation}
-    HowToGetStarted={HowToGetStarted}
-    Benefits={Benefits}
-    GetStarted={GetStarted}
-    MoreInfoSection={MoreInfoSection}
-    Footer={Footer}
-  />;
+  return (
+    <EnglishHomePageClient
+      DynamicHeroSection={DynamicHeroSection}
+      DynamicMobileActions={DynamicMobileActions}
+      Carousel={DynamicCarousel}
+      HomePage={HomePage}
+      Services={Services}
+      WhyUs={WhyUs}
+      IndividualTherapy={IndividualTherapy}
+      CoupleTherapy={CoupleTherapy}
+      FamilyTherapy={FamilyTherapy}
+      PsychoEducation={PsychoEducation}
+      HowToGetStarted={HowToGetStarted}
+      Benefits={Benefits}
+      GetStarted={GetStarted}
+      MoreInfoSection={MoreInfoSection}
+      Footer={Footer}
+    />
+  );
 }
 
 export const metadata = {
   title: "Home - CPM CANADA",
-  description: "Are you going through hard times? If so, you are not alone. Take the first step towards well-being by talking to a professional who will help you regain control and ...",
+  description:
+    "Are you going through hard times? If so, you are not alone. Take the first step towards well-being by talking to a professional who will help you regain control and ...",
 };
