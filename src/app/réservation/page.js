@@ -5,7 +5,7 @@ import ExtendedForm from "@ExtendedForm/ExtendedForm";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const Appointment = () => {
+const Reservation = () => {
   const router = useRouter();
   const formData = router.query.data ? JSON.parse(router.query.data) : null;
 
@@ -28,4 +28,4 @@ const Appointment = () => {
   );
 };
 
-export default Appointment;
+export default Reservation;

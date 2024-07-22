@@ -4,7 +4,6 @@ import React, { Component } from "react";
 import Link from "next/link";
 import Footer from "@/componentsEn/Footer/Footer";
 import Iframe from "@/componentsEn/Iframe/Iframe";
-import Head from "next/head";
 
 import classes from "@/styles/Pages.module.css";
 
@@ -13,15 +12,6 @@ export default class Contact extends Component {
     const { gDeviceWidth: deviceWidth } = this.props;
     return (
       <div>
-        <Head>
-          <title>
-            Contact us at 613-252-5227 or book an appointment online.
-          </title>
-          <meta
-            name="description"
-            content="We take consultations from 9AM to 12PM and from 1PM to 5PM. Don't hesitate to contact us to book an appointment or for more information"
-          />
-        </Head>
         <div>
           <div style={{ maxWidth: 1170, padding: "20px", margin: "auto" }}>
             <div className={classes.Address}>
@@ -93,3 +83,8 @@ export default class Contact extends Component {
     );
   }
 }
+
+export const metadata = {
+  title: "Contact us at 613-252-5227 or book an appointment online.",
+  description: "We take consultations from 9AM to 12PM and from 1PM to 5PM. Don't hesitate to contact us to book an appointment or for more information",
+};

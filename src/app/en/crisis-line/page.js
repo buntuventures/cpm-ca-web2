@@ -1,18 +1,10 @@
 "use client";
 
 import React from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 const CrisisLine = () => (
   <div style={styles.pageWrapper}>
-    <Head>
-      <title>Crisis Line - Emergency</title>
-      <meta
-        name="description"
-        content="If you are in crisis or in danger, please use the following resources to get immediate help"
-      />
-    </Head>
     <div style={styles.contentWrapper}>
       <div style={styles.header}>
         <h1 style={styles.mainTitle}>Need Help?</h1>
@@ -101,3 +93,9 @@ const styles = {
 };
 
 export default CrisisLine;
+
+export const metadata = {
+  title: "Crisis Line - Emergency",
+  description:
+    "If you are in crisis or in danger, please use the following resources to get immediate help",
+};

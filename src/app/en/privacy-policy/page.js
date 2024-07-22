@@ -2,13 +2,9 @@
 
 import React from "react";
 import Footer from "@/componentsEn/Footer/Footer";
-import Head from "next/head";
 
 const PrivacyPolicy = () => (
   <div>
-    <Head>
-      <title>Privacy Policy of CPM-CA.org</title>
-    </Head>
     <div style={{ maxWidth: 1170, padding: "20px", margin: "auto" }}>
       <h1>Privacy Policy</h1>
       <h3>Terms of Use and Confidentiality</h3>
@@ -98,3 +94,7 @@ const PrivacyPolicy = () => (
 );
 
 export default PrivacyPolicy;
+
+export const metadata = {
+  title: "Privacy Policy of CPM-CA.org",
+};
