@@ -1,30 +1,36 @@
 "use client";
 
-import React from "react";
-import ExtendedForm from "@ExtendedForm/ExtendedForm";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import React, { Suspense } from "react";
+import dynamic from "next/dynamic";
+import { useSearchParams } from "next/navigation";
 
-const Reservation = () => {
-  const router = useRouter();
-  const formData = router.query.data ? JSON.parse(router.query.data) : null;
+const DynamicExtendedForm = dynamic(
+  () => import("@ExtendedForm/ExtendedForm"),
+  {
+    ssr: false,
+  }
+);
+
+const ReservationContent = () => {
+  const searchParams = useSearchParams();
+  const formData = searchParams.get("data")
+    ? JSON.parse(searchParams.get("data"))
+    : null;
 
   return (
-    <div>
-      <Head>
-        <html lang="fr" />
-        <title>Prendre un rendez-vous avec le CPM en ligne</title>
-        <meta
-          name="description"
-          content="Utilisez notre formulaire de réservation de rendez-vous en ligne et on vous contactera dans moins de 24hrs pour fixer un rendez-vous."
-        />
-      </Head>
-      <div style={{ maxWidth: 1170, padding: "40px 20px", margin: "auto" }}>
-        <div>
-          <ExtendedForm formData={formData} />
-        </div>
+    <div style={{ maxWidth: 1170, padding: "40px 20px", margin: "auto" }}>
+      <div>
+        <DynamicExtendedForm formData={formData} />
       </div>
     </div>
+  );
+};
+
+const Reservation = () => {
+  return (
+    <Suspense fallback={<div>Chargement...</div>}>
+      <ReservationContent />
+    </Suspense>
   );
 };
 
