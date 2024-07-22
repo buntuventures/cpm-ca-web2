@@ -2,90 +2,94 @@
 
 import React from "react";
 import Footer from "@/componentsEn/Footer/Footer";
+import Head from "next/head";
 
 const PrivacyPolicy = () => (
   <div>
+    <Head>
+      <title>Privacy Policy of CPM-CA.org</title>
+    </Head>
     <div style={{ maxWidth: 1170, padding: "20px", margin: "auto" }}>
       <h1>Privacy Policy</h1>
-      <h3>Terms of use and confidentiality</h3>
+      <h3>Terms of Use and Confidentiality</h3>
       <h5>
-        This form is intended for adults domiciled in Canada with or without
-        insurance.
+        This form is intended for adult individuals residing in Canada, with or
+        without insurance.
       </h5>
       <p>
         <strong>1. Emergency</strong>
         <br />
-        In case of emergency, we recommend that you call your doctor or local
-        emergency department immediately.
+        In case of emergency, we recommend that you immediately call your
+        treating physician or your local emergency service.
       </p>
       <p>
-        <strong>2. Processing requests</strong>
+        <strong>2. Processing of Requests</strong>
         <br />
-        The appointment request is received by the Admissions Department of the
-        CPM (Psychotraumatology and Mediation Centre), which will contact you to
-        propose a consultation date or, if necessary, ask you for additional
+        The appointment request is received by the Admissions Service of CPM
+        (Center for Psychotraumatology and Mediation). They will contact you to
+        propose a consultation date or, if necessary, ask for additional
         information.
       </p>
       <p>
-        <strong>3. Waiting Periods</strong>
+        <strong>3. Timeframes</strong>
         <br />
-        You will be contacted within 1 working day to receive an appointment
-        proposal or, if necessary, to provide the service concerned with
+        You will be contacted within 1 business day to receive an appointment
+        proposal or, if necessary, to provide the concerned service with
         additional information. If you are not reachable within this time, we
-        will try to contact you again for up to 5 business days. We invite you
-        to contact us if we do not contact you within this time.
+        will try to contact you for up to 5 business days. We invite you to
+        contact us again if we do not reach you within these timeframes.
       </p>
       <p>
-        <strong>4. Incomplete Applications</strong>
+        <strong>4. Incomplete Requests</strong>
         <br />
-        The CPM reserves the right not to respond to any incomplete request.
+        CPM reserves the right not to respond to any incomplete request.
       </p>
       <p>
-        <strong>5. Personal contact details</strong>
+        <strong>5. Personal Contact Information</strong>
         <br />
-        You will be contacted directly by telephone during office hours (9AM -
-        12PM & 1PM - 5PM) or by e-mail using the contact details you have
+        You will be contacted directly by phone during office hours (9AM – 12PM
+        & 1PM – 5PM) or by email using the contact information you have
         provided. If you cancel or reschedule your first appointment with less
         than 48 hours notice, or if you do not show up, you will be charged the
         full amount of the consultation.
       </p>
       <p>
-        <strong>5. Confidentiality</strong>
+        <strong>6. Confidentiality</strong>
         <br />
-        By sending your contact details (telephone, e-mail, postal address), you
-        authorise the CPM to send you, at these details, confidential
-        information concerning your appointment request. We draw your attention
-        to the fact that unauthorized persons, especially those around you, do
-        not have access to these coordinates. The CPM cannot be held responsible
-        if confidential information communicated by means of your personal
-        contact details should be seen by unauthorised persons.
+        By submitting your contact information (phone, email, postal address),
+        you authorize CPM to send you confidential information regarding your
+        appointment request to these contacts. We draw your attention to
+        ensuring that unauthorized persons, especially those in your
+        environment, do not have access to these contact details. CPM cannot be
+        held responsible if confidential information communicated through your
+        personal contact information is seen by unauthorized persons.
       </p>
       <p>
-        <strong>6. Data protection</strong>
+        <strong>7. Data Protection</strong>
         <br />
-        The protection of the privacy of patients whose personal data are
-        processed within our institution is a legal obligation. Federal and
-        cantonal legislation on medical confidentiality and data protection
-        obliges us to protect personal data against misuse. The CPM shall take
-        all necessary measures to avoid unlawful processing of patient data.
+        Protecting the privacy of patients whose personal data is processed
+        within our institution is a legal obligation. Federal and cantonal
+        legislation on medical confidentiality and data protection requires us
+        to protect this personal data against misuse. CPM takes all necessary
+        measures to prevent illegal processing of patient data.
       </p>
       <p>
         <strong>
-          I hereby confirm that I have read and understood the above terms of
+          I confirm that I have read and understood the aforementioned terms of
           use.
         </strong>
       </p>
       <p>
         <strong>
-          I agree to take the necessary measures to prevent unauthorized persons
-          from having access to the information that the Psy-Scan Institute will
-          transmit to me by means of my personal contact details.
+          I commit to taking the necessary measures to ensure that unauthorized
+          persons cannot access the information that the Psy-Scan Institute will
+          transmit to me through my personal contact information.
         </strong>
       </p>
       <p>
         <strong>
-          The CPM cannot be held liable in the event of non-compliance by the
-          applicant with the above rules of use.
+          CPM cannot be held responsible in case of non-compliance by the
+          requestor with the aforementioned terms of use.
         </strong>
       </p>
     </div>
@@ -94,4 +98,3 @@ const PrivacyPolicy = () => (
 );
 
 export default PrivacyPolicy;
-

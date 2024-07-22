@@ -6,11 +6,11 @@
 
 .PhoneNumber {
   font-size: 1.2rem;
-  color: #ff7f00;
+  color: #FF7F00;
 }
 
 a.PhoneNumber:hover {
-  color: #ff7f00;
+  color: #FF7F00;
   opacity: 0.85;
 }
 
@@ -82,3 +82,4 @@ a.PhoneNumber:hover {
     padding: 10px 15px 0;
   }
 }
+

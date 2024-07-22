@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const FillFormActions = () => (
+const FillFormAction = () => (
   <div
     style={{
       display: "flex",
@@ -18,15 +19,15 @@ const FillFormActions = () => (
       borderRadius: "50%",
     }}
   >
-    <Link href="/reservation">
+    <Link href="/booking" passHref>
       <Image
-        alt="Reservation"
         src="/images/fill-form-icon.svg"
-        width={34}
-        height={34}
+        alt="Fill Form Icon"
+        width={34} height={34}
+        style={{ width: 34, margin: 0 }}
       />
     </Link>
   </div>
 );
 
-export default FillFormActions;
+export default FillFormAction;

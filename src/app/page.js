@@ -53,8 +53,6 @@ const HomePage = () => {
     };
   }, []);
 
-  
-
   return (
     <>
       <Head>
@@ -83,6 +81,5 @@ const HomePage = () => {
     </>
   );
 };
-
 
 export default HomePage;

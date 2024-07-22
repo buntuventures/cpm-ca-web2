@@ -14,8 +14,8 @@ const Services = () => (
       className=""
     >
       <div className={classes.ServiceWrapper}>
-        <h1 style={{ margin: "0 0 10px 0" }}>Therapeutic Services</h1>
-        <h4>Discover what&apos;s best for you</h4>
+        <h1 style={{ margin: "0 0 10px 0" }}>Therapy Services</h1>
+        <h4>Discover the best for you</h4>
         <div
           style={{
             width: 100,
@@ -23,40 +23,122 @@ const Services = () => (
             backgroundColor: "#1689DF",
             marginBottom: 40,
           }}
-        />
+        ></div>
         <p style={{ textAlign: "left" }}>
-          Our team takes pride in helping you. Our expertise spans the spectrum
-          of psychological problems and conditions, from the most basic to the
-          most complex. This includes:
+          Our team is proud to be able to assist you. Our expertise covers the
+          spectrum of psychological problems and conditions, from the most basic
+          to the most complex. This includes:
         </p>
         <div className={classes.ServiceList}>
-          {[
-            "Anxieties",
-            "Phobias and fears",
-            "Relationship difficulties",
-            "Depressions",
-            "Family problems",
-            "Burnout",
-            "Professional difficulties",
-            "Identity concerns",
-            "Traumas",
-            "Lack of self-esteem",
-            "Addictions",
-          ].map((item, index) => (
-            <div key={index}>
+          <ul>
+            <li>
               <Image
                 src="/images/arrow-right.svg"
-                width={12}
-                height={12}
-                alt="Arrow Icon"
-              />
-              <span style={{ marginLeft: "5px" }}>{item}</span>
-            </div>
-          ))}
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Anxiety
+            </li>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Phobias and fears
+            </li>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Relationship difficulties
+            </li>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Depression
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Family issues
+            </li>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Burnout
+            </li>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Professional difficulties
+            </li>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Identity concerns
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Trauma
+            </li>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Low self-esteem
+            </li>
+            <li>
+              <Image
+                src="/images/arrow-right.svg"
+                width={20}
+                height={20}
+                alt="Arrow Right"
+              />{" "}
+              Addictions
+            </li>
+          </ul>
         </div>
         <p>
           The above list is not exhaustive, and we will gladly do our best to
-          help you in your difficulties.
+          help you with your difficulties.
         </p>
       </div>
     </div>

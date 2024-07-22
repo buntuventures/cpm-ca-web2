@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import classes from "./Button.module.css";
 
 const Button = ({
@@ -9,30 +10,17 @@ const Button = ({
   loading,
   disabled = false,
 }) => {
-  let buttonStyles = [classes.Button];
-  if (color === "primary") {
-    buttonStyles.push(classes.Primary);
-  }
-
-  if (color === "primary" && loading) {
-    buttonStyles.push(classes.PrimaryButtonLoading);
-  }
-
-  if (color === "primary" && disabled) {
-    buttonStyles.push(classes.PrimaryButtonDisabled);
-  }
-
-  if (color === "secondary") {
-    buttonStyles.push(classes.Secondary);
-  }
-
-  if (color === "transparent") {
-    buttonStyles.push(classes.Transparent);
-  }
+  const buttonClasses = classNames(classes.Button, {
+    [classes.Primary]: color === "primary" && !loading && !disabled,
+    [classes.PrimaryButtonLoading]: color === "primary" && loading,
+    [classes.PrimaryButtonDisabled]: color === "primary" && disabled,
+    [classes.Secondary]: color === "secondary",
+    [classes.Transparent]: color === "transparent",
+  });
 
   return (
     <button
-      className={buttonStyles.join(" ")}
+      className={buttonClasses}
       onClick={clicked}
       style={styles}
       disabled={loading || disabled}

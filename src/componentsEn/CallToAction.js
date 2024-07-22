@@ -2,29 +2,26 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "./Button/Button";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
+import Button from "@/components/Button/Button";
 
 const CallToAction = ({ type }) => {
-  const router = useRouter();
-
-  const navigateTo = (path) => {
-    router.push(path);
-  };
+  const searchParams = useSearchParams();
 
   if (type === "call") {
     return <button>Call to Book an Appointment</button>;
   }
+
+  const href = {
+    pathname: "/en/booking",
+    query: { item: "navigation", ...Object.fromEntries(searchParams) },
+  };
+
   return (
     <Button
       color="primary"
       text="Book Online"
-      clicked={() =>
-        navigateTo({
-          pathname: "/en/booking",
-          query: { item: "navigation" },
-        })
-      }
+      clicked={href}
     />
   );
 };

@@ -1,4 +1,3 @@
-// src/pages/appointment.js
 "use client";
 
 import React from "react";
