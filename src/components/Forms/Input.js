@@ -4,7 +4,7 @@ import classes from "./Forms.module.css";
 const Input = ({
   styles,
   placeholder,
-  type = "text",
+  type,
   name,
   changed,
   value,
@@ -22,7 +22,7 @@ const Input = ({
     onBlur={blurred}
     value={value}
     onKeyDown={onKeyDown}
-    type={type}
+    type={type ? type : "text"}
   />
 );
 

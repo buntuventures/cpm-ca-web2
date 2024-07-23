@@ -5,11 +5,7 @@ const ToolTip = ({ children, fontSize, text }) => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <span
-      style={{ display: "inline-block", position: "relative" }}
-      role="tooltip"
-      aria-describedby={`tooltip-${id}`}
-    >
+    <span style={{ display: "inline-block", position: "relative" }}>
       {visible && (
         <span
           className={classes.PopUp}
