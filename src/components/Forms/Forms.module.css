@@ -1,15 +1,15 @@
 .FormWrapper {
   background-color: #f8f8f8;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
+  min-width: 350px;
   margin: 0 auto;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  padding: auto;
+  
 }
 
 .FormBody {
-  padding: 20px;
+  padding: 10px;
 }
 
 .InputStyle,
@@ -28,6 +28,17 @@
   background-clip: padding-box;
   border: 1px solid #ced4da;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.SelectInput {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("/images/arrow_down-24px.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 30px; /* Ajoutez un espace pour l'icône de fond */
 }
 
 .InputStyle:focus,

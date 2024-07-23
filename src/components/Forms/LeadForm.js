@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import Button from "../Button/Button";
 import classes from "./Forms.module.css";
-// import ArrowDown from "/images/arrow_down-24px.svg";
 import Input from "@/components/Forms/Input";
 import Select from "@/components/Forms/Select";
 
@@ -14,7 +13,6 @@ const LeadForm = () => {
     email: "",
     domaine: "Thérapie Individuelle",
   });
-  const router = useRouter();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,12 +22,15 @@ const LeadForm = () => {
     });
   };
 
-  const handleLeadFormClicked = () => {
-    router.push({
-      pathname: "/reservation",
-      query: { data: JSON.stringify(formData) },
-    });
+  const generateQueryString = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      )
+      .join("&");
   };
+
+  const queryString = generateQueryString(formData);
 
   return (
     <div className={classes.FormWrapper}>
@@ -93,12 +94,13 @@ const LeadForm = () => {
           </Select>
         </div>
         <div>
-          <Button
-            color="primary"
-            text="Prendre rendez-vous"
-            styles={styles}
-            clicked={handleLeadFormClicked}
-          />
+          <Link href={`/reservation?${queryString}`}>
+            <Button
+              color="primary"
+              text="Prendre rendez-vous"
+              styles={styles}
+            />
+          </Link>
         </div>
       </div>
     </div>
